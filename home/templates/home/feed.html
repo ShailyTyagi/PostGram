@@ -1,0 +1,40 @@
+{% extends 'home/navbar.html' %}
+
+{% block body %}
+<div class="form">
+    {% load follow %}
+    {% for obj in user|sortfeed %}
+
+        <div class="row">
+            <div class="col s12 m12">
+              <div class="card">
+                <div class="card-image">
+                  <img src="{{ obj.document.url }}">
+                  <span class="card-title">{{ obj.user }} posted:</span>
+                </div>
+                <div class="card-content">
+                  <h2>{{ obj.description }}</h2>
+                </div>
+
+                  <div class="card-action">
+                      <div class="row">
+                        <div class="col m2 ">
+                            <span class="card-title">{{ obj.like }}</span>
+                        </div>
+                        <div class="col m2">
+                          {% load static %}
+                          {% load follow %}
+                          <a href="{% url 'home:like' obj.id %}"><img src="{% static request.user|likepic:obj %}"/></a>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

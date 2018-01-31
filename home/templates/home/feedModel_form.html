@@ -1,0 +1,12 @@
+{% extends 'home/navbar.html' %}
+{% block body %}
+
+<div class="form">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'home/form.html' %}
+        <button type="submit" class="button button-block"  name="reg_btn">Post</button>
+    </form>
+</div>
+
+{% endblock %}

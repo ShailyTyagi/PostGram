@@ -1,0 +1,46 @@
+{% extends 'home/navbar.html' %}
+
+
+{% block body %}
+
+<div class="form">
+    <div class="row">
+        <div class="col m3">
+            <h1>Username:</h1>
+        </div>
+        <div class="col m3">
+            <h1>{{ user.username }}</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col m3">
+            <h1>First Name:</h1>
+        </div>
+        <div class="col m3">
+            <h1>{{ user.first_name }}</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col m3">
+            <h1>Last name:</h1>
+        </div>
+        <div class="col m3">
+            <h1>{{ user.last_name }}</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col m3">
+            <h1>E-mail:</h1>
+        </div>
+        <div class="col m3">
+            <h1>{{ user.email }}</h1>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
